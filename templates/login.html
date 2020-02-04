@@ -1,0 +1,65 @@
+{% extends "localsdirectory/index.html" %}
+{% load static %}
+
+{% block extra_meta %}
+<style>
+.login-page {
+    padding-top: 150px;
+    padding-bottom: 50px;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+</style>
+{% endblock extra_meta %}
+
+{% block content %}
+<div class="hero-listing set-bg" data-setbg="{% static 'img/blog-bg.jpg' %}">
+</div>
+<div class="container login-page">
+
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+    {% else %}
+    <p>Please login to see this page.</p>
+    {% endif %}
+{% endif %}
+    <div class="card">
+        <div class="card-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form method="post" action="{% url 'login' %}" class="contact-form">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <span>{{ form.username.label_tag }}</span>
+                                    <span>{{ form.username }}</span>
+                                </div>
+                                <div class="col-lg-6">
+                                    
+                                    <span>{{ form.password.label_tag }}</span>
+                                    <span>{{ form.password }}</span>
+                                </div>
+                                <div class="col-lg-12 text-center">
+                                    <input type="hidden" name="next" value="{{ next }}">
+                                    <button type="submit">Login</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block footer %}{% endblock footer %}

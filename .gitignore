@@ -3,11 +3,11 @@ data
 *.pyc
 __pycache__/
 
-charlidjango/settings/local.py
+localsdirectory/settings/local.py
 
 # Environments
 .env
-charlidjango/settings/.env
+localsdirectory/settings/.env
 .venv
 env/
 venv/

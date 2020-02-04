@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+
+{% block container %}
+        
+    <!-- Header Section Begin -->
+    {% block top_header %}
+        {% include 'partials/top-header.html' %}
+    {% endblock top_header %}
+    <!-- Header End -->
+
+    {% block content %}
+
+        <!-- Hero Section Begin -->
+        {% block hero_section %}
+            {% include 'partials/hero-section.html' %}
+        {% endblock hero_section %}
+        <!-- Hero Section End -->
+
+        <!-- Trending Restaurant Section Begin -->
+        {% block trending_restaurant %}
+            {% include 'partials/trending-restaurant.html' %}
+        {% endblock trending_restaurant %}
+        <!-- Trending Restaurant Section End -->
+
+        <!-- Categories Section Begin -->
+        {% block categories %}
+            {% include 'partials/categories.html' %}
+        {% endblock categories %}
+        <!-- Categories Section End -->
+
+        <!-- Testimonial Section Begin -->
+        {% block testimonial %}
+            {% include 'partials/testimonial.html' %}
+        {% endblock testimonial %}
+        
+        <!-- Testimonial Section End -->
+
+        <!-- How It Works Section Begin -->
+        {% block work-section %}
+            {% include 'partials/work-section.html' %}
+        {% endblock work-section %}
+
+        <!-- How It Works Section End -->
+
+        <!-- App Section Begin -->
+        {% block app-section %}
+            {% include 'partials/app-section.html' %}
+        {% endblock app-section %}
+        <!-- App Section End -->
+    {% endblock content %}
+    
+    <!-- Footer Section Begin -->
+    {% block footer %}
+        {% include 'partials/footer.html' %}
+    {% endblock footer %}
+    <!-- Footer Section End -->
+
+{% endblock container %}
